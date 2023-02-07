@@ -1,4 +1,3 @@
--- DO NOT COPY --
 local function AngleDiff(a, b)
 	return Angle(math.abs(math.AngleDifference(a.p, b.p)), math.abs(math.AngleDifference(a.y, b.y)), math.abs(math.AngleDifference(a.r, b.r)))
 end
