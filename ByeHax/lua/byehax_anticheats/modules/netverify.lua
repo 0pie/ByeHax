@@ -8,7 +8,7 @@ function net.ReadHeader()
 	if current_net == -1 then
 		return _netReadHeader()
 	end
-	return current_net -- I don't know if you have to do that, but just to be sure. . .
+	return current_net
 end
 function net.Incoming(len, ply)
 	current_net = _netReadHeader()
@@ -26,7 +26,7 @@ end
 byehax.AddNetCallback("NetVerify", function(ply, nets)
 	for k,v in pairs(ply.byehax.used_nets) do
 		if not nets[k] then
-			byehax:AddDetection(ply, "Net messages could not be verified", k)
+			byehax:AddDetection(ply, "Net messages could not be verified", k) -- Sadge
 		end
 	end
 	ply.byehax.used_nets = {}
