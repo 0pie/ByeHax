@@ -73,7 +73,6 @@ function byehax.IsSameFunction(f1,f2)
 end
 
 local function CheckLuaFunc(ply, func)
-	-- bad sauce wtf
 	local fi = ply.byehax.funcs[func.hash]
 	if fi then
 		if byehax.IsSameFunction(func, fi) then
