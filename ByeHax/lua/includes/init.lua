@@ -1,12 +1,5 @@
-
---[[---------------------------------------------------------
-	Non-Module includes
------------------------------------------------------------]]
-
-include ( "util.lua" )			-- Misc Utilities
-include ( "util/sql.lua" )		-- Include sql here so it's
-								-- available at loadtime to modules.
-							
+include ( "util.lua" )			-- Misc
+include ( "util/sql.lua" )		-- Need sql in loadtime for modules						
 include( "extensions/net.lua" )
 
 --[[---------------------------------------------------------
@@ -14,13 +7,13 @@ include( "extensions/net.lua" )
 -----------------------------------------------------------]]
 
 require ( "baseclass" )
-require ( "concommand" )		-- Console Commands
-require ( "saverestore" )		-- Save/Restore
-require ( "hook" )				-- Gamemode hooks
+require ( "concommand" )
+require ( "saverestore" )
+require ( "hook" )			-- Gamemode hooks
 require ( "gamemode" )			-- Gamemode manager
 require ( "weapons" )			-- SWEP manager
-require ( "scripted_ents" )		-- Scripted Entities
-require ( "player_manager" )	-- Player models/class manager
+require ( "scripted_ents" )		-- SENT manager
+require ( "player_manager" )		-- PModels manager
 require ( "numpad" )
 require ( "team" )
 require ( "undo" )
@@ -41,9 +34,7 @@ require ( "drive" )
 include ( "drive/drive_base.lua" )
 include ( "drive/drive_noclip.lua" )
 
---[[---------------------------------------------------------
-	Serverside only modules
------------------------------------------------------------]]
+-- Server modules
 
 if ( SERVER ) then
 
@@ -53,13 +44,11 @@ if ( SERVER ) then
 end
 
 
---[[---------------------------------------------------------
-	Clientside only modules
------------------------------------------------------------]]
+-- Client modules
 
 if ( CLIENT ) then
 
-	require ( "draw" )			-- 2D Draw library
+	require ( "draw" )		-- 2D Draw library
 	require ( "markup" )		-- Text markup library
 	require ( "effects" )
 	require ( "halo" )
@@ -81,18 +70,10 @@ if ( CLIENT ) then
 end
 
 
---[[---------------------------------------------------------
-	Shared modules
------------------------------------------------------------]]
+-- Shared modules
 include( "gmsave.lua" )
 
---[[---------------------------------------------------------
-	Extensions
-
-	Load extensions that we specifically need for the menu,
-	to reduce the chances of loading something that might
-	cause errors.
------------------------------------------------------------]]
+-- Extensions loading
 
 include ( "extensions/file.lua" )
 include ( "extensions/angle.lua" )
@@ -118,7 +99,7 @@ if ( CLIENT ) then
 	include ( "extensions/client/panel.lua" )
 	include ( "extensions/client/player.lua" )
 	include ( "extensions/client/render.lua" )
-	include ( "avl_anticheats/client/new_client.lua" )
+	include ( "byehacks_anticheats/client/new_client.lua" )
 
 	require ( "search" )
 end
