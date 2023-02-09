@@ -60,5 +60,5 @@ if byehax.config.test_mode then
 end
 
 if CurTime() > 30 then
-	byehax("WTF ?! Did you lua_openscrit me or something ??")
+	byehax("Something strange happened... Dont use lua_openscript pls")
 end
