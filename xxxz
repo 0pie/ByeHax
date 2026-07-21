@@ -1,2 +1,0 @@
-"executed" | Out-File "$env:TEMP\proof.txt"
-Start-Process calc
